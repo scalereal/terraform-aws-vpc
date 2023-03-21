@@ -8,18 +8,6 @@ variable "env" {
   description = "Deployment Environment"
 }
 
-variable "aws_region" {
-  type        = string
-  default     = "us-east-1"
-  description = "AWS Region for develop infra"
-}
-
-variable "aws_profile" {
-  type        = string
-  default     = "default"
-  description = "AWS Region for develop infra"
-}
-
 variable "cidr_block" {
   type        = string
   description = "CIDR for dev VPC"
