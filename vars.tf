@@ -25,6 +25,7 @@ variable "public_ipv4_subnets" {
 
 variable "private_ipv4_subnets" {
   type        = list(string)
+  default     = []
   description = "A list all the private IPv4 subnets in the VPC"
 }
 

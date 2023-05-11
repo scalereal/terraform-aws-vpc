@@ -18,12 +18,12 @@ output "public_subnet_ids" {
   description = "VPC public subnet ids"
 }
 
-output "private_subnets_ids" {
+output "private_subnet_ids" {
   value       = aws_subnet.private.*.id
   description = "VPC private subnet ids"
 }
 
-output "database_subnets_ids" {
+output "database_subnet_ids" {
   value       = aws_subnet.database.*.id
   description = "VPC database subnet ids"
 }
