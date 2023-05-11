@@ -47,6 +47,7 @@ resource "aws_internet_gateway" "igw" {
 }
 
 resource "aws_egress_only_internet_gateway" "egw" {
+  count      = var.enable_ipv6_egw && var.enable_vpc_ipv6 ? 1 : 0
   vpc_id     = aws_vpc.vpc.id
   tags       = merge(var.tags, { "Name" = format("%s-%s-egress-gateway", var.service_name, var.env) })
   depends_on = [aws_vpc.vpc]
@@ -66,7 +67,6 @@ resource "aws_route" "public_internet_gateway" {
 }
 
 resource "aws_route" "public_internet_gateway_ipv6" {
-  count                       = var.enable_vpc_ipv6 ? 1 : 0
   route_table_id              = aws_route_table.public.id
   destination_ipv6_cidr_block = "::/0"
   gateway_id                  = aws_internet_gateway.igw.id
@@ -85,7 +85,7 @@ resource "aws_route" "private_egress_gateway_ipv6" {
   count                       = var.enable_ipv6_egw && var.enable_vpc_ipv6 ? 1 : 0
   route_table_id              = aws_route_table.private_nat[count.index].id
   destination_ipv6_cidr_block = "::/0"
-  egress_only_gateway_id      = aws_egress_only_internet_gateway.egw.id
+  egress_only_gateway_id      = aws_egress_only_internet_gateway.egw[count.index].id
   depends_on                  = [aws_vpc.vpc, aws_route_table.public, aws_egress_only_internet_gateway.egw]
 }
 
