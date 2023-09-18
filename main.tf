@@ -98,7 +98,6 @@ resource "aws_route_table_association" "public" {
 
 resource "aws_eip" "nat" {
   count      = var.enable_nat_gateway ? 1 : 0
-  vpc        = true
   tags       = merge(var.tags, { "Name" = format("%s-%s-nat-eip", var.service_name, var.env) })
   depends_on = [aws_vpc.vpc, aws_route_table.public, aws_internet_gateway.igw, aws_route_table_association.public]
 }
