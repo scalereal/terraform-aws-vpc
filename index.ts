@@ -5,7 +5,7 @@
 //
 
 import { Construct } from "constructs";
-import { TerraformOutput, Fn, TerraformIterator } from "cdktf";
+import { TerraformOutput, Fn, TerraformIterator, Token } from "cdktf";
 import { Eip } from "@cdktf/provider-aws/lib/eip";
 import { DataAwsCallerIdentity } from "@cdktf/provider-aws/lib/data-aws-caller-identity";
 import { Subnet } from "@cdktf/provider-aws/lib/subnet";
@@ -260,7 +260,7 @@ export class VpcModule extends Construct {
     this.vpc_id = this.vpc.id;
     this.vpc_cidr = this.vpc.cidrBlock;
     this.vpc_ipv6_cidr = this.vpc.ipv6CidrBlock;
-    this.public_subnet_ids = this.public_subnet_it.pluckProperty("id");
+    this.public_subnet_ids = Token.asList(this.public_subnet_it.pluckProperty("id"));
 
     new TerraformOutput(this, "vpc_id", {
       value: this.vpc.id,
@@ -279,14 +279,14 @@ export class VpcModule extends Construct {
     });
     
     if (enable_private_subnets && this.private_subnet_it) {
-      this.private_subnet_ids = this.private_subnet_it.pluckProperty("id");
+      this.private_subnet_ids = Token.asList(this.private_subnet_it.pluckProperty("id"));
       new TerraformOutput(this, "private_subnet_ids", {
         value: this.private_subnet_it.pluckProperty("id"),
       });
     }
     
     if (enable_database_subnets && this.database_subnet_it) {
-      this.database_subnet_ids = this.database_subnet_it.pluckProperty("id");
+      this.database_subnet_ids = Token.asList(this.database_subnet_it.pluckProperty("id"));
       new TerraformOutput(this, "database_subnet_ids", {
         value: this.database_subnet_it.pluckProperty("id"),
       });
