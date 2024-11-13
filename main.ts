@@ -40,6 +40,14 @@ export class VpcModule extends Construct {
   public readonly private_subnet_it?: TerraformIterator;
   public readonly database_subnet_it?: TerraformIterator;
   
+  // Outputs
+  public readonly vpc_id: string;
+  public readonly vpc_cidr: string;
+  public readonly vpc_ipv6_cidr: string;
+  public readonly public_subnet_ids: string[];
+  public readonly private_subnet_ids?: string[];
+  public readonly database_subnet_ids?: string[];
+  
   constructor(scope: Construct, name: string, config: VpcModuleConfig) {
     super(scope, name);
 
@@ -249,6 +257,11 @@ export class VpcModule extends Construct {
     }
 
     // Outputs
+    this.vpc_id = this.vpc.id;
+    this.vpc_cidr = this.vpc.cidrBlock;
+    this.vpc_ipv6_cidr = this.vpc.ipv6CidrBlock;
+    this.public_subnet_ids = this.public_subnet_it.pluckProperty("id");
+
     new TerraformOutput(this, "vpc_id", {
       value: this.vpc.id,
     });
@@ -266,12 +279,14 @@ export class VpcModule extends Construct {
     });
     
     if (enable_private_subnets && this.private_subnet_it) {
+      this.private_subnet_ids = this.private_subnet_it.pluckProperty("id");
       new TerraformOutput(this, "private_subnet_ids", {
         value: this.private_subnet_it.pluckProperty("id"),
       });
     }
     
     if (enable_database_subnets && this.database_subnet_it) {
+      this.database_subnet_ids = this.database_subnet_it.pluckProperty("id");
       new TerraformOutput(this, "database_subnet_ids", {
         value: this.database_subnet_it.pluckProperty("id"),
       });

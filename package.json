@@ -1,8 +1,9 @@
 {
   "name": "@scalereal/terraform-aws-vpc",
-  "version": "1.0.0",
-  "main": "main.js",
+  "version": "1.0.1d",
+  "main": "main.ts",
   "types": "main.ts",
+  "type": "module",
   "license": "BSD-3.0",
   "scripts": {
     "get": "cdktf get",
@@ -16,7 +17,7 @@
     "upgrade:next": "npm i cdktf@next cdktf-cli@next"
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.0"
   },
   "dependencies": {
     "@cdktf/provider-aws": "19.41.1",
