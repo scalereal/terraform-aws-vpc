@@ -7,7 +7,7 @@ This CDKTF module creates a fully featured AWS VPC with customizable subnet conf
 ## Features
 
 - Creates VPC with IPv4 and IPv6 CIDR blocks
-- Automatically spans across the all availability zones
+- Automatically spans across all the availability zones
 - Supports multiple subnet types:
   - Public subnets (default)
   - Private subnets (optional)

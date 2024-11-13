@@ -98,7 +98,8 @@ export class VpcModule extends Construct {
     const numOfSubnetTypes = 1 + 
       (enable_private_subnets ? 1 : 0) + 
       (enable_database_subnets ? 1 : 0);
-    const newBits = Fn.ceil(Fn.log(Op.mul(numOfSubnetTypes, Fn.lengthOf(azs.names)), 2));
+    
+    const newBits = Fn.max([Fn.ceil(Fn.log(Op.mul(numOfSubnetTypes, Fn.lengthOf(azs.names)), 2)), 3]);
   
     // Create public subnets
     const public_subnet = new Subnet(this, "public-subnet", {
