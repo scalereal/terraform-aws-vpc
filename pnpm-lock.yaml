@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@cdktf/provider-aws':
-        specifier: 19.41.1
-        version: 19.41.1(cdktf@0.20.10(constructs@10.4.2))(constructs@10.4.2)
+        specifier: 19.58.0
+        version: 19.58.0(cdktf@0.20.11(constructs@10.4.2))(constructs@10.4.2)
       '@cdktf/provider-time':
-        specifier: 10.2.1
-        version: 10.2.1(cdktf@0.20.10(constructs@10.4.2))(constructs@10.4.2)
+        specifier: 10.3.0
+        version: 10.3.0(cdktf@0.20.11(constructs@10.4.2))(constructs@10.4.2)
       cdktf:
-        specifier: ^0.20.10
-        version: 0.20.10(constructs@10.4.2)
+        specifier: ^0.20.11
+        version: 0.20.11(constructs@10.4.2)
       constructs:
         specifier: ^10.4.2
         version: 10.4.2
@@ -207,15 +207,15 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  '@cdktf/provider-aws@19.41.1':
-    resolution: {integrity: sha512-PIC7WydF9ac5/UZ0Hhjby8WeXlhVuIB1rmNT+SgYnIQDBm/YKNfNV928458mshXsAcDu7oxiE/No91y9L0l35Q==}
+  '@cdktf/provider-aws@19.58.0':
+    resolution: {integrity: sha512-2bBt5++4u8qhrjOLVrgbVLQWe8jvP1gpTHqsZiobW6K56JigDAbPuL/N4/twIzjKT3UwVFdUkvWvRIByIjiNKg==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       cdktf: ^0.20.0
       constructs: ^10.3.0
 
-  '@cdktf/provider-time@10.2.1':
-    resolution: {integrity: sha512-I4hRjCOS2Kv2TqGxpZojtkpjVMkj9mb9iZZ3mdlKrAC3GGTtqpiIgNLQ3rLh7QiOYPivbaiYiUCFFvLDExgWJA==}
+  '@cdktf/provider-time@10.3.0':
+    resolution: {integrity: sha512-f173BwAmP9jkzdohYA5dtBmz2uyB74PflxYVu8hpRmfJGIOe8Ffn9yQreuz99Xlbfa4YDZQAL+moVNmAVhpaZw==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       cdktf: ^0.20.0
@@ -486,8 +486,8 @@ packages:
   caniuse-lite@1.0.30001680:
     resolution: {integrity: sha512-rPQy70G6AGUMnbwS1z6Xg+RkHYPAi18ihs47GH0jcxIG7wArmPgY3XbS2sRdBbxJljp3thdT8BIqv9ccCypiPA==}
 
-  cdktf@0.20.10:
-    resolution: {integrity: sha512-I8c838lNDHUeOIFCeZ6NsLHivAaYVoc+3a8k84hYP+BkQtoqCiOhcYjrm7lH42CwqfBBR+BoD7lB5AFeHekd5A==}
+  cdktf@0.20.11:
+    resolution: {integrity: sha512-YoubhokJ8s60WNrP2+cpQinb0DdMXlaFFDnPPv2A/tcRkzkwO9dWuMiXhhA0XlBJ1qA5pibaonu9Cc4B9JgKuQ==}
     peerDependencies:
       constructs: ^10.3.0
     bundledDependencies:
@@ -1466,14 +1466,14 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@cdktf/provider-aws@19.41.1(cdktf@0.20.10(constructs@10.4.2))(constructs@10.4.2)':
+  '@cdktf/provider-aws@19.58.0(cdktf@0.20.11(constructs@10.4.2))(constructs@10.4.2)':
     dependencies:
-      cdktf: 0.20.10(constructs@10.4.2)
+      cdktf: 0.20.11(constructs@10.4.2)
       constructs: 10.4.2
 
-  '@cdktf/provider-time@10.2.1(cdktf@0.20.10(constructs@10.4.2))(constructs@10.4.2)':
+  '@cdktf/provider-time@10.3.0(cdktf@0.20.11(constructs@10.4.2))(constructs@10.4.2)':
     dependencies:
-      cdktf: 0.20.10(constructs@10.4.2)
+      cdktf: 0.20.11(constructs@10.4.2)
       constructs: 10.4.2
 
   '@cspotcode/source-map-support@0.8.1':
@@ -1870,7 +1870,7 @@ snapshots:
 
   caniuse-lite@1.0.30001680: {}
 
-  cdktf@0.20.10(constructs@10.4.2):
+  cdktf@0.20.11(constructs@10.4.2):
     dependencies:
       constructs: 10.4.2
 
