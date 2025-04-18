@@ -1,6 +1,6 @@
 {
   "name": "@scalereal/terraform-aws-vpc",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "BSD-3.0",
@@ -26,7 +26,7 @@
   "dependencies": {
     "@cdktf/provider-aws": "19.60.1",
     "@cdktf/provider-time": "10.3.0",
-    "cdktf": "^0.20.11",
+    "cdktf": "^0.20.12",
     "constructs": "^10.4.2"
   },
   "devDependencies": {
