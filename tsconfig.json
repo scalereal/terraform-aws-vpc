@@ -23,17 +23,15 @@
     "stripInternal": true,
     "target": "ES2022",
     "incremental": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "outDir": "./dist"
   },
   "include": [
-    "**/*.ts"
+    "index.ts"
   ],
   "exclude": [
     "node_modules",
-    "cdktf.out"
-  ],
-  "compilerOptions": {
-    "outDir": "./dist",
-    "declaration": true,
-  }
+    "cdktf.out",
+    "__tests__"
+  ]
 }
