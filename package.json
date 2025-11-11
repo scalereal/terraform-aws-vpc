@@ -25,13 +25,14 @@
   },
   "dependencies": {
     "@cdktf/provider-aws": "^21.17.0",
-    "@cdktf/provider-time": "10.3.0",
+    "@cdktf/provider-time": "^11.0.0",
     "cdktf": "^0.21.0",
-    "constructs": "^10.4.2"
+    "constructs": "^10.4.3"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@types/node": "^22.9.0",
+    "cdktf-cli": "^0.21.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
